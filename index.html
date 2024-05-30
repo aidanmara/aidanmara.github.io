@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" media="only screen and (min-device-width: 481px)" />
+  <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="stylesmobile.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="scroll.js"></script>
+  <script src="script.js"></script>
+
+
+
+</head>
+
+<body>
+  <div class="top-nav">
+    <div class="contact-nav">
+      <div class="link-hover"><a class='bx bxl-github' href="https://github.com/aidan-ma316" target="_blank"
+          style="font-size: 48px;"></a></div>
+      <div class="link-hover"><a class='bx bxl-linkedin' href="https://www.linkedin.com/in/aidan-mara-b57208187/"
+          target="_blank" style="font-size: 46px;"></a></div>
+    </div>
+
+    <button id="hire-me-button">Hire Me </button>
+  </div>
+
+  <div class="content-container">
+
+    <div class="bio">
+
+      <div class="img-cont" onclick="clicky()">
+        <img src="./aidan.jpg" alt="Aidan Mara" width="100%" height="100%" />
+      </div>
+
+      <div class="text-area">
+        <h1>Aidan Mara</h1>
+        <h2>Computer Science Graduate</h2>
+        <h3>Los Angeles, CA • <a href="mailto:example@example.com">aidanmara@gmail.com</a> </h3>
+
+        <p>I like programming things and learning about new tech. :)</p>
+        <a href="./AidanMaraResume.pdf" download>view resume as
+          pdf</a>
+      </div>
+
+
+    </div>
+
+    <div class="seperator-bar"></div>
+
+    <div class="projects">
+      <h1>Projects</h1>
+      <div class="projects-container">
+        <div class="projects-item">
+          <p class="projects-date">2023—2024</p>
+          <div class="projects-holder" style="display: flex; flex-direction: column;">
+            <h2>HangoGo</h2>
+            <div class="projects-item-mainline">
+              <h3>Hangout Recommendation Web App</h3>
+            </div>
+            <div class="projects-item-subline">
+              <h4>Skills Used: Machine Learning, Python, Flask, NoSQL, Web Dev</h4>
+            </div>
+            <ul>
+              <li>
+                <p>Utilized neural network using tensorflow-keras to generate user-based recommendations</p>
+              </li>
+              <li>
+                <p>Scraped google and yelp to generate user data</p>
+              </li>
+              <li>
+                <p>MongoDB used to store place, feedback, and location data</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="links">
+            <a class='bx bxl-github' href="https://github.com/Lizeth-V/HangoGo" target="_blank"></a>
+            <a class='bx bx-link-external' href="https://letshangogo.com" target="_blank"></a>
+          </div>
+
+        </div>
+        <div class="projects-item">
+          <p class="projects-date">2023—2023</p>
+          <div class="projects-holder" style="display: flex; flex-direction: column;">
+            <h2>Calendar Planner App</h2>
+            <div class="projects-item-mainline">
+              <h3>Mobile Planner App for Android</h3>
+            </div>
+            <div class="projects-item-subline">
+              <h4>Skills Used: Kotlin, SQLite, CRUD</h4>
+            </div>
+            <ul>
+              <li>
+                <p>CRUD planner app made using kotlin</p>
+              </li>
+              <li>
+                <p>Utilize room database to store user data</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="links">
+            <a class='bx bxl-github' href="https://github.com/aidan-ma316/AndroidPlannerApp" target="_blank"></a>
+          </div>
+
+        </div>
+
+        <div class="projects-item">
+          <p class="projects-date">2020—2021</p>
+          <div class="projects-holder" style="display: flex; flex-direction: column;">
+            <h2>The Conservatory</h2>
+            <div class="projects-item-mainline">
+              <h3>Unity 2D Isometric Tower-Defense Monster Tamer</h3>
+            </div>
+            <div class="projects-item-subline">
+              <h4>Skills Used: Unity, Game Dev</h4>
+            </div>
+            <ul>
+              <li>
+                <p>Small game project</p>
+              </li>
+              <li>
+                <p>Sole programmer in a group with artists and developers</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="links">
+            <a class='bx bxl-github'></a>
+          </div>
+
+        </div>
+
+        <div class="projects-item">
+          <p class="projects-date">2018—2024</p>
+          <div class="projects-holder" style="display: flex; flex-direction: column;">
+            <h2>View My Github</h2>
+            <div class="projects-item-mainline">
+              <h3>My Smaller Projects</h3>
+            </div>
+            <div class="projects-item-subline">
+            </div>
+            <ul>
+              <li>
+                <p>Assignments and side projects</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="links">
+            <a class='bx bxl-github' href="https://github.com/aidan-ma316?tab=repositories" target="_blank"></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="seperator-bar"></div>
+    <div class="skillsandawards">
+      <div class="skills">
+        <h1>Skills</h1>
+        <div class="skill-list">
+          <h2>Primary Languages</h2>
+          <h3>Python,C++</h3>
+        </div>
+
+        <div class="skill-list">
+          <h2>Secondary Languages</h2>
+          <h3>SQL/NoSQL, CSS, HTML, C, C#, Kotlin, Java</h3>
+        </div>
+
+        <div class="skill-list">
+          <h2>Skills</h2>
+          <h3>Self-motivation, Problem Solving Skills, Flexibility, Teamwork</h3>
+        </div>
+
+        <div class="skill-list">
+          <h2>Tools and Frameworks</h2>
+          <h3>(Proficient) Git, AGILE, MongoDB, Unity, Data Structures</h3>
+          <h3>
+            (Familiar) Tensorflow, NodeJS, Android Studio
+          </h3>
+        </div>
+
+      </div>
+
+      <div class="skills">
+        <h1>Education and Awards</h1>
+        <div class="skill-list">
+          <h2>Bachelor's Degree in Computer Science</h2>
+          <h3>California State University, Long Beach</h3>
+          <h4>2024 • cum laude</h4>
+          <h4>President's list 4 of 4 semesters</h4>
+        </div>
+
+        <div class="skill-list">
+          <h2>Associates's Degree in Computer Science</h2>
+          <h3>Moorpark College</h3>
+          <h4>2022 • 3.5 GPA</h4>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="custom-scroll">
+      <div class="bar-item active-bar" onclick="scrollToBio()">
+        <h3 style="color: var(--text); font-size: x-large;">Bio</h3>
+        <div class="bar"></div>
+      </div>
+
+      <div class="bar-item" onclick="scrollToProjects()">
+        <h3>Projects</h3>
+        <div class=" bar">
+        </div>
+      </div>
+
+      <div class="bar-item" onclick="scrollToSkills()">
+        <h3>Skills</h3>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+
+    <div class="bottom-nav">
+
+      <label class="toggle-button">
+        <input type="checkbox" onclick="changeTheme()"">
+      <div class=" knob">
+        <a class='bx bx-sun' style="left: 13%;"></a>
+        <a class='bx bx-moon' style="right: 13%;"></a>
+    </div>
+    </label>
+  </div>
+
+</body>
+
+</html>
