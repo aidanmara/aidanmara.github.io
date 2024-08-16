@@ -1,0 +1,230 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ddd;
+    overflow-x: hidden  ;
+}
+
+body{
+    background-color: rgb(66, 68, 67);;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5vh;
+}
+
+h2{
+    font-size: 3vh;
+}
+
+.about-cont{
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.about-desc{
+    background-color: #302f2e79;
+    border-radius: 15px;
+    padding: 1%;
+    padding-inline: 1%; 
+    width: 100%;
+    text-align: center;
+    line-height: 4vh;
+    font-size: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-desc p{
+    width: 90%;
+}
+
+.algorithm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.algo-box{
+    background-color: #302f2e79;
+    border-radius: 5px;
+    margin-left: 5px;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sources-list .text-wrap{
+    width: 100%;
+}
+
+.algo-box li{
+    margin : 1vh;
+    font-weight: 400;
+    list-style-type: none;
+    letter-spacing: .15em;
+    font-size: 1.8vh;
+}
+
+.algo-box p{
+    line-height: 3vh;
+    letter-spacing: .15em   ;
+    font-size: 1.8vh;
+}
+
+.sources-list {
+    background-color: #302f2e79;
+    border-radius: 5px;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem; /* Add padding inside the list */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    font-weight: 500;
+    letter-spacing: .1em;
+}
+
+.source-category {
+    width: 100%;
+    border-bottom: .5px solid #618152;
+    margin-bottom: 0.5rem; /* Space between categories */
+}
+
+.source {
+    display: flex;
+    align-items: center;
+    margin-left: 2vh; /* Adjusted margin for better spacing */
+    width: 100%;
+    white-space: nowrap; /* Ensure text doesn't wrap */
+}
+
+.source-category h3{
+    font-size: 2vh;
+
+}
+
+.source h4{
+    font-size: 1.5vh;
+}
+
+.source a {
+    margin-left: 2vh; /* Adjusted margin for better spacing */
+    color: #ffffff; /* Optional: Set link color */
+}
+
+.sources {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Add padding around the sources section */
+}
+
+.my-links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.links a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none   ;
+}
+
+
+.link{
+    opacity: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-self: start;
+    justify-content: center;
+    align-items: end;
+    transition: .2s;
+    border-radius: 5px;
+    width: 90%;
+    text-wrap: nowrap;
+    gap: 1%;
+}
+
+.link h3{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.link:hover{
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 0.2rem rgba(241, 240, 240, 0.171));
+    opacity: 100%;
+}
+
+.link img{
+    width: 5vh;
+    height: 5vh;
+}
+
+* {
+    --sb-track-color: #232e3300;
+    --sb-thumb-color: #618152;
+    --sb-size: 13px;
+}
+
+::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+}
+
+.return-button{
+    background-color: #2a2c29;
+    transition: .2s;
+    opacity: 40%;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 10vh;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh;
+    padding-inline: 1vh;
+    -webkit-user-select: none;
+}
+
+.return-button:hover{
+    background-color: #618152;
+    opacity: 100%;
+
+}

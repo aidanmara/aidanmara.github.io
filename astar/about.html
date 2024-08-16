@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About A*</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aboutstyle.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <style>
+        .landscape-message {
+            display: none;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 98vw;
+            overflow: hidden;
+            background-color: #612521; 
+            color: white;
+            text-align: center;
+            font-size: 1.2rem;
+            z-index: 1000; 
+            justify-self: center;
+            align-self: center;
+        }
+
+        @media only screen and (orientation: portrait) {
+            .landscape-message {
+                display: block;
+            }
+
+            .about-cont{
+                display: none;
+            }
+
+            body{
+                overflow: none;
+                width: 100%;
+                height: 98vh;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .return-button{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landscape-message">
+        Portrait support is not available<br>Please view this page in browser.
+    </div>
+    <div class="return-button" onclick="return_to_visualizer()">
+        <h2>Return</h2>
+    </div>
+
+    <div class="about-cont">
+        <div class="about-title">
+            <H1>About The A* Algorithm</H1>
+        </div>
+
+        <div class="about-desc">
+            <h2>What is the A* Algorithm?</h2>
+            <p>
+                The A* algorithm is an algorithm that finds the shortest path between two points on a graph. A* is considered to be the optimal pathfinding algorithm because it searches for the shorter paths first. It is able to do this because the algorithm is an Informed Search Algorithm, meaning it takes advantage of a heuristic function to make informed decisions throughout.
+            </p>
+            <p>
+                A heuristic function is a function that ranks potential branches in order to decide which branch to take next. In the case of the visualizer, since our graph is on a globe, our heuristic function is the distance between the current city and the destination across the Earth's surface. In A*, the heuristic function is compared with the cost function in order to make its next decisions.
+            </p>
+            <p>
+                The general equation is: <em>f(current_node) = g(current_node) + h(current_node)</em>.
+            </p>
+            <p>
+                It is crucial that the heuristic value never exceeds the actual cost to ensure the accuracy of the algorithm. If the heuristic is not properly bounded, the algorithm may overestimate or underestimate the true cost, leading to suboptimal paths.
+            </p>
+        </div>
+
+        <div class="algorithm">
+            <h2>General Algorithm</h2>
+            <div class="algo-box">
+                <div class="text-wrap">
+            <p>
+                Create a Map to hold the path from the start to the destination.<br>
+                Place <em>starting_node</em> into the <em>open_queue</em>.<br>
+                While the <em>open_queue</em> is not empty:
+            </p>
+            <ul>
+                <li>
+                    Pop the lowest value from <em>open_queue</em> and set it to <em>current_node</em>:
+                    <ul>
+                        <li>In my algorithm, I used a min priority queue to easily access the lowest value.</li>
+                        <li>Let <em>f(current_node) = g(current_node) + h(current_node)</em>.</li>
+                    </ul>
+                </li>
+                <li>
+                    If <em>current_node</em> is <em>destination_node</em>, we have found the solution.
+                    <ul>
+                        <li> Reconstruct the path backwards and return the path.</li>
+                    </ul>
+                </li>
+                <li>
+                    For every neighbor of <em>current_node</em>:
+                    <ul>
+                        <li>Set <em>neighbor_cost</em> = <em>g(current_node) + w(current_node, neighbor)</em>.</li>
+                        <li>If <em>neighbor</em> is in <em>open_queue</em>:
+                            <ul>
+                                <li>If <em>g(neighbor) ≤ neighbor_best_cost</em>, continue.</li>
+                            </ul>
+                        </li>
+                        <li>Else if <em>neighbor</em> has been visited:
+                            <ul>
+                                <li>If <em>g(neighbor) ≤ neighbor_best_cost</em>, continue.</li>
+                                <li>Else:
+                                    <ul>
+                                        <li>Add <em>neighbor</em> to the <em>open_queue</em>.</li>
+                                        <li>Set <em>h(neighbor)</em> to be the heuristic distance to <em>destination_node</em>.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Set <em>g(neighbor) = neighbor_best_cost</em>.</li>
+                        <li>Set the path mapping of <em>neighbor</em> as <em>current_node</em>.</li>
+                    </ul>
+                </li>
+                <li>Add <em>current_node</em> to the visited set.</li>
+            </ul>
+            <p>
+                If <em>current_node</em> never reaches the goal, return an error.
+            </p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="sources">
+            <h2>Sources I Used For This Project</h2>
+        
+            <div class="sources-list">
+                <div class="text-wrap">
+                <!-- Algorithm Resources -->
+                <div class="source-category">
+                    <h3>Algorithm Resources</h3>
+                    <div class="source">
+                        <h4>A* Algorithm Overview</h4>
+                        <a href="https://mat.uab.cat/~alseda/MasterOpt/AStar-Algorithm.pdf" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>A* Pathfinding Implementation</h4>
+                        <a href="https://www.redblobgames.com/pathfinding/a-star/implementation.html" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>A* Algorithm Comparison</h4>
+                        <a href="https://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>GeeksforGeeks - A* Algorithm</h4>
+                        <a href="https://www.geeksforgeeks.org/a-search-algorithm/" target="_blank">view here</a>
+                    </div>
+                </div>
+        
+                <!-- APIs and Tools -->
+                <div class="source-category">
+                    <h3>APIs and Tools</h3>
+                    <div class="source">
+                        <h4>Google Maps JavaScript API Documentation</h4>
+                        <a href="https://developers.google.com/maps/documentation/javascript" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>Boxicons</h4>
+                        <a href="https://boxicons.com/" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>Scrollbar Customization</h4>
+                        <a href="https://scrollbar.app/" target="_blank">view here</a>
+                    </div>
+                    <div class="source">
+                        <h4>Best CSS Button Generator</h4>
+                        <a href="https://www.bestcssbuttongenerator.com/#/10" target="_blank">view here</a>
+                    </div>
+                </div>
+        
+                <!-- Implementation Resources -->
+                <div class="source-category">
+                    <h3>Implementation Resources</h3>
+                    <div class="source">
+                        <h4>Priority Queue Implementation in JavaScript</h4>
+                        <a href="https://www.geeksforgeeks.org/implementation-priority-queue-javascript/#" target="_blank">view here</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <div class="my-links">
+            <h2>Learn More About Me</h2>
+            <div class="links">
+                <a href="https://github.com/aidanmara/" target="_blank">
+                    <div class="link">
+                        <img src="./github-logo-24.png">
+                        <h3>View my GitHub</h3>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/aidan-mara-b57208187/" target="_blank">
+                    <div class="link">
+                        <img src="./linkedin-logo-84.png">
+                        <h3>View my LinkedIn</h3>
+                    </div>
+                    </a>
+                
+                    <a href="https://github.com/aidanmara/AStarDemonstration" target="_blank">
+                        <div class="link">
+                            <img src="./github-logo-24.png">
+                            <h3>View this project's <br>repository</h3>
+                        </div>
+                    </a>
+                
+
+                <a href="mailto:aidanmara@gmail.com"> 
+                    <div class="link">
+                        <img src="./envelope-solid-84.png">
+                        <h3>Send me an email<br>aidanmara@gmail.com</h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        
+
+    </div>
+    <script>function return_to_visualizer() {
+        window.location.href = 'astar.html'; // Replace with the actual path to your visualizer page
+    }</script>
+
+</body>
+</html>
+
