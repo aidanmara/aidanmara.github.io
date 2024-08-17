@@ -7,7 +7,7 @@ const fs = require('fs');
 const app = express();
 const geoip = require('geoip-lite');
 
-//Regions to allow using the webservers
+//Regions to allow using the webserver
 const allowedCountries = ['US','CA']
 
 const sslkeys = {
