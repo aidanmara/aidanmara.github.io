@@ -1,8 +1,30 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit'); //Protecting my bank account LOL
 const path = require('path');
+const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const app = express();
+const geoip = require('geoip-lite');
+
+//Regions to allow using the webservers
+const allowedCountries = ['US','CA']
+
+const sslkeys = {
+    key: fs.readFileSync('~/etc/letsencrypt/live/aidanmara.info/privkey.pem'),
+    cert: fs.readFileSync('~/etc/letsencrypt/live/aidanmara.info/fullchain.pem'),
+}
+
+app.use((req, res, next) => {
+    const clientIP = req.ip;
+    const geo = geoip.lookup(clientIP);
+  
+    if (geo && allowedCountries.includes(geo.country)) {
+      next(); //Allow US IP's
+    } else {
+      res.status(403).send('Access From this Region Denied, Please access from a US IP.'); // Block the request
+    }
+  });
 
 
 require('dotenv').config();
@@ -44,7 +66,16 @@ app.get('/astar-about', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'astar', 'about.html'));
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+const PORTHTTP = 80;
+const PORTHTTPS = 443;
+
+https.createServer(sslkeys, app).listen(PORTHTTPS, () =>{
+    console.log('Server Listening on HTTPS at Port 443')
+});
+
+http.createServer((req,res) => {
+    res.writeHead(301. {"Location": "https://${req.headers.host}${req.url}"});
+    res.end
+    }).listen(PORTHTTP, () =>{
+    console.log('Server Listening on HTTPS at Port 80, Redirecting')
 });
