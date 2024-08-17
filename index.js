@@ -74,7 +74,7 @@ https.createServer(sslkeys, app).listen(PORTHTTPS, () =>{
 });
 
 http.createServer((req,res) => {
-    res.writeHead(301. {"Location": "https://${req.headers.host}${req.url}"});
+    res.writeHead(301, {"Location": "https://${req.headers.host}${req.url}"});
     res.end
     }).listen(PORTHTTP, () =>{
     console.log('Server Listening on HTTPS at Port 80, Redirecting')
