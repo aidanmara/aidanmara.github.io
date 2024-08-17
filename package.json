@@ -1,0 +1,21 @@
+{
+  "name": "aidanmara.github.io",
+  "author": "Aidan Mara <aidanmara@gmail.com>",
+  "version": "1.1.0",
+  "description": "My Portfolio Website Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidanmara/aidanmara.github.io.git"
+  },
+  "license": "ISC"
+}
