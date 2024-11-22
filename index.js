@@ -8,14 +8,14 @@ const app = express();
 const geoip = require('geoip-lite');
 
 //Regions to allow using the webservers
-const allowedCountries = ['US','CA']
+//const allowedCountries = ['US','CA']
 
 const sslkeys = {
-    key: fs.readFileSync('~/etc/letsencrypt/live/aidanmara.info/privkey.pem'),
-    cert: fs.readFileSync('~/etc/letsencrypt/live/aidanmara.info/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/aidanmara.info/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/aidanmara.info/fullchain.pem'),
 }
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     const clientIP = req.ip;
     const geo = geoip.lookup(clientIP);
   
@@ -26,6 +26,7 @@ app.use((req, res, next) => {
     }
   });
 
+*/
 
 require('dotenv').config();
 const mapsAPIKEY = process.env.GOOGLE_MAPS_API_KEY;
@@ -44,8 +45,6 @@ app.use('/astar-demo', apiLimiter);
 app.use(express.static(path.join(__dirname, 'public')));
 // Root route, load portfolio
 app.get('/', (req, res) => {
-    console.log('ASTAR path:', path.join(__dirname, 'public', 'astar', 'astar.html'));
-
   res.redirect('/index.html');
 });
 
@@ -70,12 +69,12 @@ const PORTHTTP = 80;
 const PORTHTTPS = 443;
 
 https.createServer(sslkeys, app).listen(PORTHTTPS, () =>{
-    console.log('Server Listening on HTTPS at Port 443')
+    console.log('Server Listening on HTTPS at Port 443');
 });
 
 http.createServer((req,res) => {
-    res.writeHead(301. {"Location": "https://${req.headers.host}${req.url}"});
-    res.end
-    }).listen(PORTHTTP, () =>{
-    console.log('Server Listening on HTTPS at Port 80, Redirecting')
+   res.writeHead(301, {"Location": "https://${req.headers.host}${req.url}"});
+   res.end}).listen(PORTHTTP, () =>{
+   console.log('Server Listening on HTTPS at Port 80, Redirecting');
 });
+

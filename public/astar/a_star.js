@@ -1,6 +1,5 @@
 //All Visualizer Functionality is Included in this file
 
-
 //implement priority queue for neighbor selection
 class PriorityQueue {
     constructor() {
@@ -622,6 +621,8 @@ function clear_path(path){
         line.setMap(null);
     });
 }
+
+console.warn = function(){};
 
 // Clear the current vizualized path and/or best path
 function clear_lines() {

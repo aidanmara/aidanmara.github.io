@@ -284,7 +284,8 @@
         right: 0;
         margin-top: 2%;
         margin-right: 2%;
-    }
+	z-index: 105;    
+}
 
     .collapse-cont h3{
         color: #ddd;
@@ -338,6 +339,7 @@
         height: 20vh;
         background-color: black;
         z-index: 9;
+	padding-left:10%;
     }
 
     .to-from{
